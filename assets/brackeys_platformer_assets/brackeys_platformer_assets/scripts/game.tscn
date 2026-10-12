@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ca88thv0amtcv" path="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/scripts/character_body_2d.tscn" id="1_58a3d"]
 [ext_resource type="Texture2D" uid="uid://dcb1t7jljur0m" path="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_ljdu6"]
 [ext_resource type="PackedScene" uid="uid://cwuoe1osptj4l" path="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/scripts/platform.tscn" id="3_jwaa1"]
+[ext_resource type="PackedScene" uid="uid://0bhit0srirb" path="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/scripts/coin.tscn" id="4_kiaow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("2_ljdu6")
@@ -234,3 +235,12 @@ position = Vector2(192, 3)
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_7jktm")
 autoplay = &"move"
+
+[node name="coin" parent="." unique_id=648308289 instance=ExtResource("4_kiaow")]
+position = Vector2(73, -41)
+
+[node name="coin2" parent="." unique_id=1658519981 instance=ExtResource("4_kiaow")]
+position = Vector2(52, -26)
+
+[node name="coin3" parent="." unique_id=953147876 instance=ExtResource("4_kiaow")]
+position = Vector2(129, -15)

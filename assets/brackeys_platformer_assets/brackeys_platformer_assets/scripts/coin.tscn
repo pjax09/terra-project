@@ -7,14 +7,9 @@ resource_name = "coin pickup"
 script/source = "extends Area2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_body_entered(body):
+	print (\"one of plus coin\")
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6lb26"]
@@ -118,7 +113,9 @@ script = SubResource("GDScript_e48sv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=609149341]
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
-frame_progress = 0.56901747
+frame_progress = 0.725992
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=80865904]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
