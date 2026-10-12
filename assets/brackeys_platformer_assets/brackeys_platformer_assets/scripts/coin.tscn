@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://0bhit0srirb"]
+
+[ext_resource type="Texture2D" uid="uid://bwmeeaudp76k8" path="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/coin.png" id="1_t4jtx"]
+
+[sub_resource type="GDScript" id="GDScript_e48sv"]
+resource_name = "coin pickup"
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lb26"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec1f7"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvv1h"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q473"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n22f0"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lgdm"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7pg8"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6k51"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pfp1"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga3cq"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lop2o"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uid61"]
+atlas = ExtResource("1_t4jtx")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lb26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec1f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvv1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q473")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n22f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lgdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7pg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6k51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pfp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga3cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lop2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uid61")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 3.1622777
+
+[node name="coin" type="Area2D" unique_id=648308289]
+script = SubResource("GDScript_e48sv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=609149341]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.56901747
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=80865904]
+shape = SubResource("CircleShape2D_g4v7s")
