@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b3hl5t5e4gicr"
-path="res://.godot/imported/coin.wav-eaa6a7f629dabf9d5ada95fd017b3455.sample"
+path="res://.godot/imported/coin.wav-d38196a24bb43724e26cfae533dbda65.sample"
 
 [deps]
 
-source_file="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/sounds/coin.wav"
-dest_files=["res://.godot/imported/coin.wav-eaa6a7f629dabf9d5ada95fd017b3455.sample"]
+source_file="res://assets/brackeys_platformer_assets (2)/sounds/coin.wav"
+dest_files=["res://.godot/imported/coin.wav-d38196a24bb43724e26cfae533dbda65.sample"]
 
 [params]
 
