@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://brxqher6yu5ye"]
+
+[sub_resource type="GDScript" id="GDScript_nfjy2"]
+resource_name = "radom"
+script/source = "extends Node
+
+signal coins_changed(new_total: int)
+
+var coins: int = 0
+
+func add_coin(amount: int = 1) -> void:
+    coins += amount
+    coins_changed.emit(coins)
+
+func reset() -> void:
+    coins = 0
+    coins_changed.emit(coins)
+"
+
+[node name="Node2D" type="Node2D" unique_id=1296238405]
+script = SubResource("GDScript_nfjy2")

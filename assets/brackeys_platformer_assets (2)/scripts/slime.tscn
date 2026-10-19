@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://yvac2ipg6jo8"]
+
+[ext_resource type="Texture2D" uid="uid://d2nmllmcugu1d" path="res://assets/brackeys_platformer_assets (2)/sprites/slime_green.png" id="1_5jc4t"]
+[ext_resource type="PackedScene" uid="uid://b8a1nloakyoq4" path="res://assets/brackeys_platformer_assets (2)/scripts/kill_zone.tscn" id="2_4l1t8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppcr1"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jayke"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2002g"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bratd"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppcr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jayke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2002g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bratd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1491138933]
+
+[node name="kill zone" parent="." unique_id=2021737760 instance=ExtResource("2_4l1t8")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="kill zone" unique_id=2140267335]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1973726497]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.24851969

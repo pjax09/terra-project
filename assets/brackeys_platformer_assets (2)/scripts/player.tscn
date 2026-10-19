@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 
 #left is -1 nothing is 0 right is 1 for direction
 	var direction := Input.get_axis(\"move_left\", \"move_right\")
-	
 	#flips the things
 	if direction > 0:
 		animated_sprite.flip_h = false 
@@ -46,10 +45,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
-	
-	
 
+	
+	
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18r3x"]
@@ -217,8 +215,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87sry"]
+size = Vector2(10, 15)
 
 [node name="player" type="CharacterBody2D" unique_id=194534983]
 z_index = 2
@@ -231,5 +229,5 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1806102289]
-position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_yf5fn")
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_87sry")
