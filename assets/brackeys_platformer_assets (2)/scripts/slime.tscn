@@ -1,10 +1,26 @@
 [gd_scene format=3 uid="uid://yvac2ipg6jo8"]
 
 [ext_resource type="Texture2D" uid="uid://d2nmllmcugu1d" path="res://assets/brackeys_platformer_assets (2)/sprites/slime_green.png" id="1_5jc4t"]
-[ext_resource type="PackedScene" uid="uid://b8a1nloakyoq4" path="res://assets/brackeys_platformer_assets (2)/scripts/kill_zone.tscn" id="2_4l1t8"]
+
+[sub_resource type="GDScript" id="GDScript_tc4ab"]
+script/source = "extends Node2D
+
+@onready var timer: Timer = $Timer
+@onready var player = $\"../../player\"
+signal player_dead
+
+func _on_body_entered(body: Node2D) -> void:
+	player_dead.emit()
+	print (\"you died\")
+	player.velocity.x = 0
+	timer.start()
+
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(8, 10)
+size = Vector2(8, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppcr1"]
 atlas = ExtResource("1_5jc4t")
@@ -42,16 +58,23 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=1491138933]
+[node name="slime" type="Node2D" unique_id=1491138933]
 
-[node name="kill zone" parent="." unique_id=2021737760 instance=ExtResource("2_4l1t8")]
+[node name="Area2D" type="Area2D" parent="." unique_id=478332600]
+collision_mask = 3
+script = SubResource("GDScript_tc4ab")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="kill zone" unique_id=2140267335]
-position = Vector2(0, -7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1563465973]
+position = Vector2(1, -7.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
+[node name="Timer" type="Timer" parent="Area2D" unique_id=99594812]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1973726497]
-position = Vector2(0, -13)
+position = Vector2(1, -13)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
 frame_progress = 0.24851969
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

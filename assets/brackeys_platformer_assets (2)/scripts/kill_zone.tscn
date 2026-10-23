@@ -6,11 +6,12 @@ script/source = "extends Area2D
 
 @onready var timer: Timer = $Timer
 @onready var player = $\"../player\"
+signal player_dead
 
 func _on_body_entered(body: Node2D) -> void:
+	player_dead.emit()
 	print (\"you died\")
-	player.velocity = Vector2.ZERO
-	
+	player.velocity.x = 0
 	timer.start()
 
 func _on_timer_timeout() -> void:
